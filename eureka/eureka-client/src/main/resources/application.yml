@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    appname: eureka-client
+  client:
+    allow-redirects: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:1111/eureka/
+
+spring:
+  application:
+    name: eureka-client
+
+ribbon:
+  eureka:
+    enabled: true

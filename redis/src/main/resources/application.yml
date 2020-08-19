@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: redis-connect
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 0
+    # Redis服务器地址
+    host: 106.12.161.112
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password:
+    # 连接超时时间（毫秒）
+    timeout: 1200
+
+# 应用服务 WEB 访问端口
+server:
+  port: 8080

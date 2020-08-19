@@ -1,0 +1,27 @@
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: eureka-client
+    api-b:
+      path: /api-b/**
+      serviceId: feign-client
+
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    appname: zuul-client
+  client:
+    allow-redirects: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:1111/eureka/
+    fetch-registry: true
+server:
+  port: 5555
+
+
+ribbon:
+  eureka:
+    enabled: true

@@ -1,0 +1,30 @@
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    appname: config-client-01
+  client:
+    allow-redirects: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:1111/eureka/
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: info,health,beans,env,actuator,refresh
+ribbon:
+  eureka:
+    enabled: true
+
+spring:
+  cloud:
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: 123456
