@@ -1,13 +1,35 @@
 spring:
+  application:
+    name: config-client-2
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: 123456
   cloud:
     config:
+      # 开发环境
       profile: dev
+      # git分支
       label: master
-      uri: http://localhost:7001
-      name: didispace
+      # uri: 根据 config-server 配置的 spring.cloud.server.git.uri
+      # git文件的名称（不包括开发环境）
+      name: springcloud
       discovery:
+        # 开启服务发现
         enabled: true
         service-id: config-server
 
-  application:
-    name: config-client-1
+server:
+  port: 7003
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    appname: config-client-02
+  client:
+    allow-redirects: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:1111/eureka/
+

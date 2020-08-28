@@ -5,8 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ximusunny/learn
-          search-paths: java/springcloud
+          uri: https://gitee.com/ximusunny/springcloud-bus-learn.git
           username:
           password:
     bus:
@@ -26,11 +25,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: info,health,beans,env,actuator,refresh
-
-
-
-
+        include: bus-refresh
 
 eureka:
   instance:

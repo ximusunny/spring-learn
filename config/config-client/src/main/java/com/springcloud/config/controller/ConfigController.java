@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigController {
 
-//    @Autowired
-//    private Environment env;
+    @Value("${name}")
+    private String name;
 
-    @Value("${from}")
-    private String fron;
-
-    @GetMapping("/from")
+    @GetMapping("/name")
     public String getConfig() {
-        return this.fron;
+        return this.name;
     }
 }

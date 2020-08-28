@@ -11,7 +11,6 @@ public class RabbitController {
     @Autowired
     private Sender sender;
 
-
     @GetMapping("/send")
     public String sendMsg() {
         this.sender.send();
